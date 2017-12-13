@@ -2,8 +2,10 @@ import React from 'react';
 
 export default function ListItem({item, onClick}) {
     let formatTime = 'unknown time';
+    let reg = /(\d{2})\/(\d{2})\/(\d{4})/g;
     if(item.time){
-        formatTime = new Date(item.time).toISOString().match(/(\d{4}-\d{2}-\d{2})/)[1];
+        formatTime = new Date(item.time).toLocaleString('en-GB').match(/(\d{2}\/\d{2}\/\d{4}).*(\d{2}:\d{2}:\d{2})/);
+        formatTime = formatTime[1].replace(reg,'$3-$2-$1') + ' ' + formatTime[2];
     }
 
     return (

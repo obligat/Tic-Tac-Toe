@@ -24,5 +24,6 @@
   },
   "devDependencies": {
     "create-app-with-sass": "^1.0.0"
-  }
+  },
+  "homepage": "https://obligat.github.io/Desk-react"
 }
